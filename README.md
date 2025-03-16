@@ -1,17 +1,17 @@
-# DevSecOps Pipeline Implementation for Tic Tac Toe Game
+﻿# DevSecOps Pipeline Implementation for Tic Tac Toe Game
 
-![Screenshot 2025-03-04 at 7 16 48 PM](https://github.com/user-attachments/assets/7ed79f9c-9144-4870-accd-500085a15592)
+![Screenshot 2025-03-04 at 7 16 48â€¯PM](https://github.com/user-attachments/assets/7ed79f9c-9144-4870-accd-500085a15592)
 
 ![image](https://github.com/user-attachments/assets/5b2813a5-f493-4665-8964-77359b5be93a)
 
 ## Features
 
-- 🎮 Fully functional Tic Tac Toe game
-- 📊 Score tracking for X, O, and draws
-- 📜 Game history with timestamps
-- 🏆 Highlights winning combinations
-- 🔄 Reset game and statistics
-- 📱 Responsive design for all devices
+- ðŸŽ® Fully functional Tic Tac Toe game
+- ðŸ“Š Score tracking for X, O, and draws
+- ðŸ“œ Game history with timestamps
+- ðŸ† Highlights winning combinations
+- ðŸ”„ Reset game and statistics
+- ðŸ“± Responsive design for all devices
 
 ## Technologies Used
 
@@ -24,15 +24,15 @@
 
 ```
 src/
-├── components/
-│   ├── Board.tsx       # Game board component
-│   ├── Square.tsx      # Individual square component
-│   ├── ScoreBoard.tsx  # Score tracking component
-│   └── GameHistory.tsx # Game history component
-├── utils/
-│   └── gameLogic.ts    # Game logic utilities
-├── App.tsx             # Main application component
-└── main.tsx           # Entry point
+â”œâ”€â”€ components/
+â”‚   â”œâ”€â”€ Board.tsx       # Game board component
+â”‚   â”œâ”€â”€ Square.tsx      # Individual square component
+â”‚   â”œâ”€â”€ ScoreBoard.tsx  # Score tracking component
+â”‚   â””â”€â”€ GameHistory.tsx # Game history component
+â”œâ”€â”€ utils/
+â”‚   â””â”€â”€ gameLogic.ts    # Game logic utilities
+â”œâ”€â”€ App.tsx             # Main application component
+â””â”€â”€ main.tsx           # Entry point
 ```
 
 ## Game Logic
@@ -87,4 +87,6 @@ yarn build
 ```
 
 The build artifacts will be stored in the `dist/` directory.
+
+testing
 
