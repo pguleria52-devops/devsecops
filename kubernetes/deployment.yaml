@@ -9,6 +9,11 @@ spec:
   selector:
     matchLabels:
       app: tic-tac-toe
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
@@ -16,7 +21,7 @@ spec:
     spec:
       containers:
       - name: tic-tac-toe
-        image: ghcr.io/iam-veeramalla/devsecops-demo:sha-fb64dc2ac8cd8d79ad4a75c58326596b59eaf402
+        image: ghcr.io/pguleria52-devops/devsecops:sha-2193262ddcb6fcad487348c5a53a5a60178c9e9b
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -40,16 +45,11 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
       imagePullSecrets:
-      - name: github-container-registry        
-      strategy:
-        type: RollingUpdate
-        rollingUpdate:
-          maxUnavailable: 1
-          maxSurge: 1
+      - name: github-container-registry
 
 ---
 
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: tic-tac-toe-hpa
@@ -67,33 +67,3 @@ spec:
       target:
         type: Utilization
         averageUtilization: 50
-
----
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: tic-tac-toe
-spec:
-  selector:
-    matchLabels:
-      app: tic-tac-toe
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
-  template:
-    spec:
-      containers:
-      - name: tic-tac-toe
-        image: ghcr.io/iam-veeramalla/devsecops-demo:sha-fb64dc2ac8cd8d79ad4a75c58326596b59eaf402
-        ports:
-        - containerPort: 80
-        resources:
-          limits:
-            cpu: "0.5"
-            memory: "512Mi"
-          requests:
-            cpu: "0.2"
-            memory: "256Mi"
